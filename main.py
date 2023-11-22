@@ -6,10 +6,9 @@ random.shuffle(lst)
 data = pd.DataFrame({'whoAmI':lst})
 data.head()
 
-result_df = data
-result_df.loc[data['whoAmI']=='human', 'Human'] = '1'
-result_df.loc[data['whoAmI']!='human', 'Human'] = '0'
-result_df.loc[data['whoAmI']=='robot', 'Robot'] = '1'
-result_df.loc[data['whoAmI']!='robot', 'Robot'] = '0'
-result_df.pop('whoAmI')
-print(result_df)
+data.loc[data['whoAmI']=='human', 'Human'] = '1'
+data.loc[data['whoAmI']!='human', 'Human'] = '0'
+data.loc[data['whoAmI']=='robot', 'Robot'] = '1'
+data.loc[data['whoAmI']!='robot', 'Robot'] = '0'
+data.pop('whoAmI')
+print(data)
